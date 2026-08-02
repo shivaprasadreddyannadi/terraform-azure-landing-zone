@@ -1,0 +1,13 @@
+<mxfile host="65bd71144e">
+    <diagram id="oqY4a1BEKiCquKQriII5" name="Page-1">
+        <mxGraphModel dx="606" dy="540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="+--------------------------------------------------------------------------------+&#xa;|                  Enterprise Azure Landing Zone (Terraform)                     |&#xa;+--------------------------------------------------------------------------------+&#xa;&#xa;&#xa;Developer&#xa;    |&#xa;    v&#xa;+-------------------+&#xa;| GitHub Repository |&#xa;+-------------------+&#xa;          |&#xa;          v&#xa;+-------------------+&#xa;| GitHub Actions CI |&#xa;| fmt | init |      |&#xa;| validate           |&#xa;+-------------------+&#xa;          |&#xa;          v&#xa;+-------------------+&#xa;| Terraform Modules |&#xa;+-------------------+&#xa;          |&#xa;          v&#xa;+------------------------------------------------------------------+&#xa;|                    Microsoft Azure Subscription                  |&#xa;|                                                                  |&#xa;|  +-------------------------+   +-------------------------------+  |&#xa;|  | Platform Resource Group |   | Network Resource Group        |  |&#xa;|  |                         |   |                               |  |&#xa;|  | +---------------------+ |   | +---------------------------+ |  |&#xa;|  | | Log Analytics       | |   | | Hub Virtual Network      | |  |&#xa;|  | | Workspace           | |   | +---------------------------+ |  |&#xa;|  | +---------------------+ |   |              |                |  |&#xa;|  |                         |   |   +----------+----------+     |  |&#xa;|  | +---------------------+ |   |   |          |          |     |  |&#xa;|  | | Azure Key Vault     | |   |   |          |          |     |  |&#xa;|  | +---------------------+ |   |   v          v          v     |  |&#xa;|  |                         |   | Shared   Management  Private  |  |&#xa;|  |                         |   | Services    Subnet   Endpoints|  |&#xa;|  +-------------------------+   +-------------------------------+  |&#xa;|                                                                  |&#xa;+------------------------------------------------------------------+" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="340" width="400" height="660" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
