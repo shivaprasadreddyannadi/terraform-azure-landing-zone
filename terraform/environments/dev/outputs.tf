@@ -17,3 +17,13 @@ output "hub_subnet_ids" {
   description = "IDs of the development hub subnets."
   value       = module.hub_network.subnet_ids
 }
+
+output "log_analytics_workspace_id" {
+  description = "Resource ID of the development Log Analytics Workspace."
+  value       = module.platform_monitoring.workspace_id
+}
+
+output "log_analytics_workspace_name" {
+  description = "Name of the development Log Analytics Workspace."
+  value       = module.platform_monitoring.workspace_name
+}

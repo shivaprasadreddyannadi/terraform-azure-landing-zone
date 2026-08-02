@@ -53,3 +53,16 @@ module "hub_network" {
     Application = "networking"
   })
 }
+module "platform_monitoring" {
+  source = "../../modules/monitoring"
+
+  workspace_name      = "log-${var.application}-${var.environment}-${var.location}"
+  location            = var.location
+  resource_group_name = module.platform_resource_group.name
+  sku                 = "PerGB2018"
+  retention_in_days   = 30
+
+  tags = merge(local.common_tags, {
+    Application = "monitoring"
+  })
+}
