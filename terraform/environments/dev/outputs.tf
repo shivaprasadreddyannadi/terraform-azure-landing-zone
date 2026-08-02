@@ -27,3 +27,17 @@ output "log_analytics_workspace_name" {
   description = "Name of the development Log Analytics Workspace."
   value       = module.platform_monitoring.workspace_name
 }
+output "key_vault_id" {
+  description = "Resource ID of the development Azure Key Vault."
+  value       = module.platform_key_vault.id
+}
+
+output "key_vault_name" {
+  description = "Name of the development Azure Key Vault."
+  value       = module.platform_key_vault.name
+}
+
+output "key_vault_uri" {
+  description = "URI of the development Azure Key Vault."
+  value       = module.platform_key_vault.vault_uri
+}

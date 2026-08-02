@@ -1,3 +1,5 @@
+data "azurerm_client_config" "current" {}
+
 locals {
   common_tags = {
     Environment = var.environment
@@ -64,5 +66,24 @@ module "platform_monitoring" {
 
   tags = merge(local.common_tags, {
     Application = "monitoring"
+  })
+}
+
+module "platform_key_vault" {
+  source = "../../modules/key-vault"
+
+  key_vault_name      = var.key_vault_name
+  location            = var.location
+  resource_group_name = module.platform_resource_group.name
+  tenant_id           = data.azurerm_client_config.current.tenant_id
+
+  sku_name                      = "standard"
+  soft_delete_retention_days    = 7
+  purge_protection_enabled      = false
+  public_network_access_enabled = true
+  network_default_action        = "Deny"
+
+  tags = merge(local.common_tags, {
+    Application = "security"
   })
 }

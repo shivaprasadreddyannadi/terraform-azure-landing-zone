@@ -27,3 +27,8 @@ variable "cost_center" {
   type        = string
   default     = "technology"
 }
+
+variable "key_vault_name" {
+  description = "Globally unique Azure Key Vault name for the development environment."
+  type        = string
+}
