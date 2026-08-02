@@ -27,3 +27,29 @@ module "network_resource_group" {
     Application = "networking"
   })
 }
+module "hub_network" {
+  source = "../../modules/networking"
+
+  virtual_network_name = "vnet-hub-${var.environment}-${var.location}"
+  location             = var.location
+  resource_group_name  = module.network_resource_group.name
+  address_space        = ["10.0.0.0/16"]
+
+  subnets = {
+    "snet-shared-services" = {
+      address_prefixes = ["10.0.1.0/24"]
+    }
+
+    "snet-management" = {
+      address_prefixes = ["10.0.2.0/24"]
+    }
+
+    "snet-private-endpoints" = {
+      address_prefixes = ["10.0.3.0/24"]
+    }
+  }
+
+  tags = merge(local.common_tags, {
+    Application = "networking"
+  })
+}
